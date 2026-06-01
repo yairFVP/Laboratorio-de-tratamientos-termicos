@@ -1,0 +1,32 @@
+[Libraries]
+[Libraries]/
+[Libraries]/*
+/Library/
+/Temp/
+/Obj/
+/Logs/
+
+# Visual Studio
+*.csproj
+*.sln
+*.user
+*.unityproj
+*.suo
+*.tmp
+
+# Build files
+Build/
+Builds/
+*.apk
+*.aab
+
+# Unity
+*.pidb
+*.pdb
+*.cache
+*.unitypackage
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

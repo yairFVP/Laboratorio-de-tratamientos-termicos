@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3415838624770570973
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639247ca83abc874e893eb93af2b5e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 0
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: texturadelaprobeta3 2
+  m_Shader: {fileID: -6465566751694194690, guid: 2310f16d8c73b8c46ab026c957622346,
+    type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap:
+    RenderType: Opaque
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DFG:
+        m_Texture: {fileID: 2800000, guid: 83d5abfd23f37a645bb0bc0e39aae43a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _detailphoto:
+        m_Texture: {fileID: 2800000, guid: 4713c2272cbcfaa47a4fba113f403fc0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _mainphoto:
+        m_Texture: {fileID: 2800000, guid: fb1cd666171e0a1459c03ed17cfc0c1d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaClip: 0
+    - _Blend: 0
+    - _CullMode: 2
+    - _DstBlend: 0
+    - _GlossyReflections: 1
+    - _HeightBoost: 0.9
+    - _HeightContrast: 0.008
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _Surface: 0
+    - _ZTest: 4
+    - _ZWrite: 1
+    - _ZWriteControl: 0
+    - _brightness: 5
+    - _contrast: 1.9
+    - _metallicvalue: 0.18
+    - _noisestrenghth: 0.25
+    - _rustamount: 0.87
+    - _rustcontrast: 1
+    - _rustmetallic: 0.08
+    - _rustsmoothness: 0.05
+    - _smoothbase: 0.18
+    - _smoothwear: 0.08
+    - _topwearend: 1.05
+    - _topwearstart: 0.45
+    - _topwearstrenhtgh: 0.002
+    - _wearamount: 2.67
+    m_Colors:
+    - _basecolor: {r: 0.06666665, g: 0.08627448, b: 0.10980386, a: 0}
+    - _rustcolor: {r: 0.20754719, g: 0.14861482, b: 0.10768957, a: 0}
+    - _wearcolor: {r: 0.5411765, g: 0.5176471, b: 0.49019608, a: 0}
+  m_BuildTextureStacks: []
