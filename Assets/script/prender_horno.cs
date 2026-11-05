@@ -54,7 +54,7 @@ public class prender_horno : UdonSharpBehaviour
         PrenderHorno.Play();
         PrenderApagarHorno();
       
-        //secuencia.IniciarSecuencia();
+        
 
         if (enTransicion) return;
 
@@ -93,14 +93,14 @@ public class prender_horno : UdonSharpBehaviour
         if (objetivoEncender)
         {
             intensidadActual = Mathf.Lerp(0f, intensidadMaxima, progreso);
-            //secuencia.IniciarSecuencia();//
+            
         }
            
             
         else
 
             intensidadActual = Mathf.Lerp(intensidadMaxima, 0f, progreso);
-            //secuencia.IniciarSecuenciaReversa();//
+           
 
         foreach (GameObject luzObj in luces)
         {
@@ -129,7 +129,7 @@ public class prender_horno : UdonSharpBehaviour
             enTransicion = false;
             encendidas = objetivoEncender;
             Pruebadefuncionluces();
-            //SendCustomEventDelayedSeconds(nameof(secuencia.IniciarSecuencia), duracionTransicion);
+           
             
 
             // Si se apagaron, las desactivamos completamente
@@ -140,7 +140,7 @@ public class prender_horno : UdonSharpBehaviour
                 {
                     if (luzObj != null)
                         luzObj.SetActive(false);
-                        //secuencia.IniciarSecuenciaReversa();
+                        
                 }
                 
             }

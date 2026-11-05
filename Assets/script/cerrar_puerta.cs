@@ -51,7 +51,7 @@ public class cerrar_puerta : UdonSharpBehaviour
         else
         {
             SendCustomEventDelayedSeconds(nameof(GirarPuerta), 0);
-            //temporizador.collidertemp.enabled = false;
+           
         }
 
 
@@ -65,8 +65,7 @@ public class cerrar_puerta : UdonSharpBehaviour
             SendCustomEventDelayedFrames(nameof(GirarPuerta), 150);//RETARDO PARA SONIDO
             abrir.SetTrigger(triggerCerrar);
             AudioCerrar.Play();
-            //CondicionPuerta();
-            //temporizador.collidertemp.enabled = false;
+            
 
         }
     }
@@ -89,18 +88,5 @@ public class cerrar_puerta : UdonSharpBehaviour
         }
     }
 
-    /*public void ActivarAccion()
-    {
-        //Debug.Log("Acción ejecutada desde el botón en VRChat");
-        // Aquí pones lo que quieres que haga
-    }*/
-
-    /*public void CondicionPuerta()
-    {
-        if (abierta)
-        {
-            temporizador.collidertemp.enabled = false;
-        }
-        
-    }*/
+    
 }

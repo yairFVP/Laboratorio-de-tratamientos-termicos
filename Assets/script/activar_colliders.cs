@@ -22,7 +22,7 @@ public class activar_colliders : UdonSharpBehaviour
             horno.enabled = false;
             final.enabled = false;
 
-            //soltar.SoltarObjeto();
+            
 
         }
         

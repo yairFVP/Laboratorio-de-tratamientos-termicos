@@ -71,13 +71,6 @@ public class Display_Temp : UdonSharpBehaviour
         }
     }
 
-    /*public void FinSecuencia()
-    {
-        if(indice == objetos.Length)
-        {
-            ApagarTodos();
-            
-        }
-    }*/
+   
 
 }

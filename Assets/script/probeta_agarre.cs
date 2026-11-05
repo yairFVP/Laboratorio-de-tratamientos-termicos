@@ -14,28 +14,7 @@ public class probeta_agarre : UdonSharpBehaviour
     public GameObject horno2;
    
 
-    //public pinzas_dispmoviles atrapar;
-    /*private void OnTriggerStay(Collider other)
-    {
-        
-
-        if (other.gameObject==horno2)
-        {
-            atrapar.SoltarObjeto();
-            
-            horno.enabled = false;
-
-            
-        }
-        if (other.gameObject==final2)
-        {
-            atrapar.SoltarObjeto();
-            final.enabled = false;
-
-        }
-
-
-    }*/
+   
 
     private void OnTriggerExit(Collider other)
     {

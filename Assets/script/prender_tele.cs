@@ -1,6 +1,7 @@
 ﻿
 using UdonSharp;
 using UnityEngine;
+using VRC.SDK3.Video.Components.AVPro;
 using VRC.SDK3.Video.Components.Base;
 using VRC.SDKBase;
 using VRC.Udon;
@@ -8,27 +9,54 @@ using VRC.Udon;
 public class prender_tele : UdonSharpBehaviour
 {
 
+    public GameObject canvasvideo;
+
     public GameObject pantalla;
+
+    public VRCAVProVideoPlayer reproductor;
+    public bool reproducir = false;
+        
+
     void Start()
     {
-        PrenderPantalla();
-        //videoPlayer.Stop();
+        //PararVideo();
+        //canvasvideo.SetActive(false);
+        
     }
 
-    /*public BaseVRCVideoPlayer videoPlayer;
-    public VRCUrl videoUrl;*/
+    
 
     public override void Interact()
     {
-        /*videoPlayer.LoadURL(videoUrl);
-        videoPlayer.Play();*/
-        pantalla.SetActive(true);
-        SendCustomEventDelayedSeconds(nameof(PrenderPantalla),108f);
+       
+
+        canvasvideo.SetActive(false);
+        if (reproducir == true)
+        {
+
+            PararVideo();
+        }
+        else
+        {
+            Reproducirvideo();
+            
+        }
     }
 
-    public void PrenderPantalla()
+    
+    
+
+    public void Reproducirvideo()
     {
-        pantalla.SetActive(false);
+        reproducir = true;
+        
+        reproductor.Play();
+        
+    }
+    public void PararVideo()
+    {
+        reproducir = false;
+        reproductor.Pause();
     }
       
 }

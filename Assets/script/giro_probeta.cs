@@ -24,10 +24,10 @@ public class giro_probeta : UdonSharpBehaviour
     private bool seguidorDentro = false;
     private bool probetaDentro = false;
 
-    //public cambio_color finanimacion;
+    
     public void OnTriggerEnter(Collider other)
     {
-        //if (terminado) return;
+        
 
         // Detectar pinza
         if (other.gameObject == pinza)
@@ -52,7 +52,7 @@ public class giro_probeta : UdonSharpBehaviour
         }
 
         // Si los 3 entraron → cuenta vuelta
-        if (/*pinzaDentro &&*/ seguidorDentro /*&& probetaDentro*/)
+        if (seguidorDentro )
         {
             vueltasActuales++;
 
@@ -69,10 +69,7 @@ public class giro_probeta : UdonSharpBehaviour
 
                 terminado = true;
                 DesaparecerObjetos();
-                //finanimacion.transicionColor.SetTrigger("AnimtransicionFin");
-                //DesaparecerObjetos();
-                //vueltasActuales = 0;
-                //SendCustomEventDelayedSeconds(nameof(AparecerObjetos), 10f);
+                
             }
         }
     }
@@ -90,15 +87,7 @@ public class giro_probeta : UdonSharpBehaviour
 
 
     }
-    /*public void AparecerObjetos()
-    {
-        seguidor.SetActive(true);
-        marcador.SetActive(true);
-        dona.SetActive(true);
-        terminado=false;
-        
-        
-    }*/
+    
 
     
 }

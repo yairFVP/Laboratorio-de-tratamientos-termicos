@@ -14,9 +14,9 @@ public class info_activar_video : UdonSharpBehaviour
 
     void Start()
     {
-        //indiceActual = 0;
+        
         MostrarImagen(indiceActual);
-        //imagenes[0].SetActive(true);
+        
         
 
     }

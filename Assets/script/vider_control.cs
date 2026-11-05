@@ -7,16 +7,7 @@ using VRC.Udon;
 
 public class vider_control : UdonSharpBehaviour
 {
-    /*public VRCAVProVideoPlayer videoPlayer;
-    public VRCUrl videoURL;  //Aquí en lugar de string
-
-    public override void Interact()
-    {
-        if (videoPlayer != null && videoURL != null)
-        {
-            videoPlayer.PlayURL(videoURL);
-        }
-    }*/
+   
 
 
     public GameObject pantalla;

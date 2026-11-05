@@ -6,8 +6,9 @@ using VRC.Udon;
 
 public class activarDona : UdonSharpBehaviour
 {
+    //
     public GameObject objetoADesaparecer;
-    public GameObject objetoPermitido; // ej. probeta
+    public GameObject objetoPermitido; 
 
     public float tiempoNecesario = 3f;
 
@@ -24,7 +25,7 @@ public class activarDona : UdonSharpBehaviour
     void Start()
     {
         rendererObjeto.material = materialNormal;
-        //giro.Play();
+      
 
     }
 
@@ -62,9 +63,5 @@ public class activarDona : UdonSharpBehaviour
         }
     }
 
-    /*private void OnTriggerStay(Collider other)
-    {
-        
-          
-    }*/
+    
 }

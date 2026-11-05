@@ -37,41 +37,54 @@ public class temporizador : UdonSharpBehaviour
     }
     public void Start()
     {
-        collidertemp.enabled = false;
+        collidertemp.enabled = false;//Collider del temporizador inicia desactivado para evitar interactuar con el
     }
 
-    public void ActivarCollider()
+    public void ActivarCollider()//
     {
        
 
         colliderInteract.enabled = true;
         Boton.enabled = true;
-        collidertemp.enabled = true;
+        //collidertemp.enabled = true;
         
     }
+    public bool tempoactivado = false;//activa el collider del temporizador cuando
+                                      //la probeta esta dentro del horno y se cumplen
+                                      //las condiciones del script cambio_color
 
     public void DesactivarCollider()
     {
         colliderInteract.enabled = false;
         Boton.enabled = false;
-        collidertemp.enabled = false;
+        /*if (tempoactivado)
+        {
+            collidertemp.enabled = false;
+        }*/
+        tempoactivado = true;
+      
+        
+        
     }
 
     public void IniciarAnimacion()
     {
+
         
         audiocronometro.Play();
         temp.SetTrigger(inicio);
-        //temp.Play("tiempo", 0, 0f);
         DesactivarCollider();
+        
         activarupdate = true;
 
     }
     
     void Update()
     {
+
         if (activarupdate)
         {
+            Debug.Log("inicio update");
             FinAnimacion();
         }
        
@@ -87,7 +100,10 @@ public class temporizador : UdonSharpBehaviour
             {
                 estado = true;
                 ActivarCollider();
-                Debug.Log("Fin animacion");              
+                tempoactivado = false;
+                Debug.Log("Fin animacion");
+                activarupdate = false;//modi1
+                
             }            
     }
 }

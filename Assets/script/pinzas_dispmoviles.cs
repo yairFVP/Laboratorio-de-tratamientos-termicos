@@ -15,7 +15,7 @@ public class pinzas_dispmoviles : UdonSharpBehaviour
     public string triggerSoltar = "soltarobjeto";
     public string triggerAbrir = "abrirpinzas";
     public string triggerCerrar = "cerrarpinzas";
-    //private bool tomado = false;
+    
 
      
     
@@ -74,26 +74,7 @@ public class pinzas_dispmoviles : UdonSharpBehaviour
 
         
     }
-    /*private void OnTriggerStay(Collider other)
-    {
-        
-        
-        {
-            
-            SendCustomEventDelayedSeconds(nameof(SoltarObjeto), 2f);
-            
-        }
-        
-       
-        
-    }*/
-
-
-
     
-
-
-
     // Método público para soltar el objeto atrapado
     public void SoltarObjeto()
     {
@@ -121,26 +102,7 @@ public class pinzas_dispmoviles : UdonSharpBehaviour
     }
 
 
-    // Este método sobrescribe (override) el método "Interact" de una clase base
-    // y se ejecuta cuando el jugador u otro sistema interactúa con este objeto
-    /*public override void Interact()
-    {
-
-        if (abierta)
-        {
-            animador.SetTrigger(triggerCerrar);
-            abierta = false;
-
-        }
-        else
-        {
-            animador.SetTrigger(triggerAbrir);
-            abierta = true;
-        }
-
-        // Al interactuar, soltamos el objeto si hay alguno agarrado
-        SoltarObjeto();
-    }*/
+    
     private void Start()
     {
         animador.SetTrigger(triggerAbrir);

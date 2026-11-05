@@ -65,8 +65,6 @@ public class controles_animacion : UdonSharpBehaviour
         
             botonpulsado.sharedMaterial = color;
         
-        
-        
     }
 
 }

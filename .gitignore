@@ -30,3 +30,11 @@ Builds/
 # OS
 .DS_Store
 Thumbs.db
+# Archivos adicionales de Unity y Visual Studio
+.vs/
+.vscode/
+.idea/
+.vsconfig
+UserSettings/
+ClientSimStorage/
+MemoryCaptures/

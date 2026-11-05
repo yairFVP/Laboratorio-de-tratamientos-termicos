@@ -10,31 +10,25 @@ using VRC.Udon.Common.Exceptions;
 public class cambio_color : UdonSharpBehaviour
 {
 
-    public Animator transicionColor;//INTERMEDIO
-    public string estadorojovivo = "primer";
+    public Animator transicionColor;// Animacion de la probeta dentro del agua 
+    public string estadorojovivo = "primer";//
 
     public Renderer objetoObjetivoRenderer;
 
     public Material TexturaHorno;
     public Material TexturaFinal;
 
-    public bool retrasoActivo = false;
-
     public temporizador cambiocolor;
     public giro_probeta transicion;
     public cerrar_puerta cerrar_Puerta;
+    public prender_horno hornoprendido;
 
     public bool marcador = false;
     public bool activamicroestructura=false;
-    public bool activartapa=false; 
-   
-
-
-
-    public prender_horno hornoprendido;
+    public bool activartapa=false;
     public bool objeto_dentro_horno = false;
+    public bool retrasoActivo = false;
 
- 
     public MeshRenderer microestructura; 
     public GameObject tapa_desactivar;
 
@@ -42,98 +36,80 @@ public class cambio_color : UdonSharpBehaviour
     public GameObject probetaAceite;
     public GameObject probetaSalmuera;
     
-    
     public GameObject probeta_activar;
     public GameObject probetaotra;
     public GameObject portal;
   
     public VRC_Pickup pickup;
 
-
     void Start()
-    {
-      
+    {  
         probeta_activar.SetActive(false);
         probetaotra.SetActive(false);
         microestructura.enabled = false;
         pickup.pickupable = false;
         portal.SetActive(false);
-        
     }
     
-
     void OnTriggerStay(Collider other)
     {
-       
+       //aqui va una bandera
         if (other.gameObject.name == "basehorno")
         {
-           
             transicionColor.enabled = false;
-            
             cambiocolor.temp.SetBool(cambiocolor.banderafin, false);
             if (hornoprendido.encendidas == true && cerrar_Puerta.abierta == false)
             {
-
-                cambiocolor.collidertemp.enabled = true;
-                if (cambiocolor.estado == true /*&& cerrar_Puerta.abierta==false*/)
+                if (cambiocolor.tempoactivado == false)
                 {
-                    //cambiocolor.FinAnimacion();
+                    cambiocolor.collidertemp.enabled = true;
+                }
+                else
+                {
+                    cambiocolor.collidertemp.enabled = false;
+                }
+                if (cambiocolor.estado == true)
+                {
                     CambiarColor();
                     Debug.Log("cambio de color");
-
-
                 }
                 Debug.Log("OBJETO DENTRO");
-                
             }
-
         }
-        
-       
         else if (other.gameObject.name == "Fluido")
-        {
-            
+        {            
             transicionColor.enabled = true;
             transicionColor.SetTrigger("AnimtransicionInicio");
             if ( transicion.terminado==true)
-            {
-                
+            {               
                 transicionColor.enabled = false;
                 objetoObjetivoRenderer.sharedMaterial = TexturaFinal;
                 microestructura.enabled=true;
-
             }
-
-        }
-       
+        }       
     }
 
     public void CambiarColor()
-    {
-       
+    {      
         if (objetoObjetivoRenderer != null )
         {
             objetoObjetivoRenderer.sharedMaterial = TexturaHorno;
-
         }
     }
 
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject.name == "basehorno")
-        {
-          
+        {         
             Debug.Log("OBJETO FUERA");
             
             cambiocolor.temp.SetBool(cambiocolor.banderafin, true);
             cambiocolor.collidertemp.enabled = false;
             cambiocolor.estado = false;
-            cambiocolor.activarupdate = false;
+            //cambiocolor.activarupdate = false;//mod1
 
             tapa_desactivar.SetActive(false);
-
-        }
-        
+        }      
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -142,14 +118,10 @@ public class cambio_color : UdonSharpBehaviour
             if (objetoObjetivoRenderer.sharedMaterial == TexturaFinal)
             {
                 tapa_desactivar.SetActive(true);
-
                 SendCustomEventDelayedSeconds(nameof(RetardoProbeta), 3f);
-
                 microestructura.enabled = true;
-               pickup.pickupable     = true;
+                pickup.pickupable     = true;
                 portal.gameObject.SetActive(true);
-
-
             }
         }
     }
